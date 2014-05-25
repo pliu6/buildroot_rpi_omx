@@ -1,0 +1,11 @@
+--- gst-rtsp-server/examples/test-readme.c.orig	2014-04-24 17:25:46.108333331 -0500
++++ gst-rtsp-server/examples/test-readme.c	2014-04-24 17:28:06.568334618 -0500
+@@ -46,7 +46,7 @@
+    * element with pay%d names will be a stream */
+   factory = gst_rtsp_media_factory_new ();
+   gst_rtsp_media_factory_set_launch (factory,
+-      "( videotestsrc is-live=1 ! x264enc ! rtph264pay name=pay0 pt=96 )");
++      "( videotestsrc is-live=1 ! omxh264enc ! video/x-h264, profile=(string)high, level=(string)4 ! h264parse ! rtph264pay name=pay0 pt=96 )");
+ 
+   gst_rtsp_media_factory_set_shared (factory, TRUE);
+ 
