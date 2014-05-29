@@ -18,18 +18,19 @@ endef
 
 define HOST_PKGCONF_INSTALL_WRAPPER
 	$(INSTALL) -m 0755 -D package/pkgconf/pkg-config.in \
-		$(TARGET_CROSS)pkg-config
+		$(HOST_DIR)/usr/bin/pkg-config
 	$(SED) 's,@PKG_CONFIG_LIBDIR@,$(STAGING_DIR)/usr/lib/pkgconfig:$(STAGING_DIR)/usr/share/pkgconfig,' \
 		-e 's,@STAGING_DIR@,$(STAGING_DIR),' \
-		$(TARGET_CROSS)pkg-config
+		$(HOST_DIR)/usr/bin/pkg-config
+	$(HOSTLN) -s $(HOST_DIR)/usr/bin/pkg-config $(TARGET_CROSS)pkg-config
 endef
 
 define HOST_PKGCONF_STATIC
-	$(SED) 's,@STATIC@,--static,' $(TARGET_CROSS)pkg-config
+	$(SED) 's,@STATIC@,--static,' $(HOST_DIR)/usr/bin/pkg-config
 endef
 
 define HOST_PKGCONF_SHARED
-	$(SED) 's,@STATIC@,,' $(TARGET_CROSS)pkg-config
+	$(SED) 's,@STATIC@,,' $(HOST_DIR)/usr/bin/pkg-config
 endef
 
 PKGCONF_POST_INSTALL_TARGET_HOOKS += PKGCONF_LINK_PKGCONFIG
