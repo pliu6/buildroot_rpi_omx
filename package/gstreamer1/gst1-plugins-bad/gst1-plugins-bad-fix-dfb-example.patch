@@ -22,9 +22,14 @@ Index: gst1-plugins-bad-1.2.1/ext/directfb/dfb-example.c
 ===================================================================
 --- gst1-plugins-bad-1.2.1.orig/ext/directfb/dfb-example.c
 +++ gst1-plugins-bad-1.2.1/ext/directfb/dfb-example.c
-@@ -1,7 +1,7 @@
+@@ -1,12 +1,11 @@
  
 -#include <directfb.h>
+-
+ #ifdef __no_instrument_function__
+ #undef __no_instrument_function__
+ #endif
+ 
  #include <stdio.h>
  #include <gst/gst.h>
 +#include <directfb.h>
