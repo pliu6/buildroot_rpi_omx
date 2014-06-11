@@ -1,0 +1,11 @@
+--- gst1-plugins-bad-1.3.2/gst/videoparsers/gsth264parse.c.orig	2014-06-10 17:07:09.772027429 -0500
++++ gst1-plugins-bad-1.3.2/gst/videoparsers/gsth264parse.c	2014-06-10 17:07:35.724027667 -0500
+@@ -145,7 +145,7 @@
+ gst_h264_parse_init (GstH264Parse * h264parse)
+ {
+   h264parse->frame_out = gst_adapter_new ();
+-  gst_base_parse_set_pts_interpolation (GST_BASE_PARSE (h264parse), FALSE);
++  //gst_base_parse_set_pts_interpolation (GST_BASE_PARSE (h264parse), FALSE);
+   GST_PAD_SET_ACCEPT_INTERSECT (GST_BASE_PARSE_SINK_PAD (h264parse));
+ }
+ 
