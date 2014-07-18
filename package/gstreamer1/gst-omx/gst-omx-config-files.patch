@@ -65,16 +65,18 @@ diff -Naur gst-omx-master.orig/config/rpi/gstomx.conf gst-omx-master/config/rpi/
  component-name=OMX.broadcom.video_decode
  rank=256
  in-port-index=130
-@@ -27,7 +27,7 @@
+@@ -27,16 +27,16 @@
  
  [omxh264dec]
  type-name=GstOMXH264Dec
 -core-name=/opt/vc/lib/libopenmaxil.so
 +core-name=/usr/lib/libopenmaxil.so
  component-name=OMX.broadcom.video_decode
- rank=256
+-rank=256
++rank=257
  in-port-index=130
-@@ -36,7 +36,7 @@
+ out-port-index=131
+ hacks=no-component-role
  
  [omxtheoradec]
  type-name=GstOMXTheoraDec
